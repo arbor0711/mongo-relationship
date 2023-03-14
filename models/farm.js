@@ -64,4 +64,8 @@ const addProduct = async (place, item) => {
   console.log(res);
 };
 
-addProduct("Wensen Farm", "Potato");
+// addProduct("Wensen Farm", "Potato");
+
+Farm.findOne({ name: "Wensen Farm" })
+  .populate("products")
+  .then((farm) => console.log(farm));
